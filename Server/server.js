@@ -2,7 +2,7 @@ const express = require('express');
 const morgan  = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+const db = require('./database');
 
 const app = express();
 app.use(cors());
@@ -27,14 +27,13 @@ app.get('/', (req, res, next) => {
     res.json({'status': 'Alive'});
 });
 
-// Other API endpoints: Links go here...
-// You can uncomment the below four lines as you implement the functionality - we'll discuss this structure in week three.
-// require('./app/routes/user.server.routes')(app);
-// require('./app/routes/event.server.routes')(app);
-// require('./app/routes/question.server.routes')(app);
 
+const userRoutes = require("./app/user.server.routes.js");
+// Mount Routes
+app.use('/', userRoutes);
 
 // Default response for any other request
 app.use((req, res) => {
     res.sendStatus(404);
 });
+
