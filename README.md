@@ -21,7 +21,7 @@ The server environment and database were provided as part of the **project infra
 ## Tech Stack
 - **Frontend:** Vue.js, Vue Router, Axios
 - **Backend:** Node.js, Express.js, JWT, SQLite
-- **Other:** RESTful APIs, custom authentication middleware, CRUD operations
+- **Other:** RESTful APIs, JWT authentication middleware, CRUD operations
 
 ---
 
